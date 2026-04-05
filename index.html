@@ -21,123 +21,119 @@
     }
   </script>
   <style>
+    .sidebar-section h2 { letter-spacing: 0.08em; }
+    @page { size: A4; margin: 0; }
     @media print {
-      body { background: white !important; margin: 0; }
-      .resume-container { box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; }
-    }
-    .sidebar-section h2 {
-      letter-spacing: 0.08em;
+      html, body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .resume-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .no-print { display: none !important; }
     }
   </style>
 </head>
 <body class="bg-slate-100 font-sans antialiased">
-  <div class="resume-container max-w-[960px] mx-auto my-10 shadow-2xl rounded-xl overflow-hidden flex min-h-[1340px]">
+  <div class="resume-container max-w-[900px] mx-auto my-10 print:my-0 shadow-2xl rounded-xl overflow-hidden flex">
 
     <!-- ========== 左侧栏 ========== -->
-    <aside class="w-[300px] bg-slate-900 text-white flex-shrink-0 flex flex-col">
+    <aside class="w-[230px] bg-slate-900 text-white flex-shrink-0 flex flex-col">
 
       <!-- 头像 -->
-      <div class="pt-10 pb-6 flex justify-center bg-gradient-to-b from-slate-800 to-slate-900">
-        <img
-          src="photo.jpg"
-          alt="骆子谦"
-          class="w-36 h-36 rounded-full object-cover ring-4 ring-blue-500/60 shadow-xl"
-        >
+      <div class="pt-6 pb-3 flex justify-center bg-gradient-to-b from-slate-800 to-slate-900">
+        <img src="photo.jpg" alt="骆子谦"
+          class="w-24 h-24 rounded-full object-cover ring-[3px] ring-blue-500/60 shadow-xl">
       </div>
 
-      <div class="px-7 pb-8 flex flex-col flex-1">
+      <div class="px-5 pb-5 flex flex-col flex-1">
 
         <!-- 联系方式 -->
-        <div class="sidebar-section mb-7">
-          <h2 class="text-xs font-semibold text-blue-400 uppercase mb-4 border-b border-slate-700 pb-2">
-            <i class="fas fa-address-card mr-1.5"></i>联系方式
+        <div class="sidebar-section mb-4">
+          <h2 class="text-[11px] font-semibold text-blue-400 uppercase mb-2.5 border-b border-slate-700 pb-1.5">
+            <i class="fas fa-address-card mr-1"></i>联系方式
           </h2>
-          <ul class="space-y-2.5 text-[13px] text-slate-300">
-            <li class="flex items-center gap-3">
-              <i class="fas fa-phone text-blue-400 w-4 text-center text-xs"></i>
+          <ul class="space-y-1.5 text-[12px] text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i class="fas fa-phone text-blue-400 w-3.5 text-center text-[10px]"></i>
               <span>15258990202</span>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-envelope text-blue-400 w-4 text-center text-xs"></i>
+            <li class="flex items-center gap-2.5">
+              <i class="fas fa-envelope text-blue-400 w-3.5 text-center text-[10px]"></i>
               <a href="mailto:luoziqian@outlook.com" class="hover:text-blue-400 transition">luoziqian@outlook.com</a>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fab fa-weixin text-blue-400 w-4 text-center text-xs"></i>
+            <li class="flex items-center gap-2.5">
+              <i class="fab fa-weixin text-blue-400 w-3.5 text-center text-[10px]"></i>
               <span>LuoZiqianX</span>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-map-marker-alt text-blue-400 w-4 text-center text-xs"></i>
-              <span>浙江 · 金华 · 义乌</span>
+            <li class="flex items-center gap-2.5">
+              <i class="fas fa-map-marker-alt text-blue-400 w-3.5 text-center text-[10px]"></i>
+              <span>浙江 · 义乌</span>
             </li>
           </ul>
         </div>
 
         <!-- 教育背景 -->
-        <div class="sidebar-section mb-7">
-          <h2 class="text-xs font-semibold text-blue-400 uppercase mb-4 border-b border-slate-700 pb-2">
-            <i class="fas fa-graduation-cap mr-1.5"></i>教育背景
+        <div class="sidebar-section mb-4">
+          <h2 class="text-[11px] font-semibold text-blue-400 uppercase mb-2.5 border-b border-slate-700 pb-1.5">
+            <i class="fas fa-graduation-cap mr-1"></i>教育背景
           </h2>
           <div>
-            <h3 class="text-sm font-semibold text-white">中国科学技术大学</h3>
-            <p class="text-slate-400 text-xs mt-0.5">2023.07 – 2027.07（预计）</p>
-            <p class="text-slate-300 text-[13px] mt-1">少年班学院 · 人工智能专业</p>
-            <p class="text-slate-400 text-xs">本科在读</p>
+            <h3 class="text-[13px] font-semibold text-white">中国科学技术大学</h3>
+            <p class="text-slate-400 text-[11px] mt-0.5">2023.07 – 2027.07</p>
+            <p class="text-slate-300 text-[12px] mt-0.5">少年班学院 · 人工智能</p>
+            <p class="text-slate-400 text-[11px]">本科在读</p>
           </div>
         </div>
 
         <!-- 技术栈 -->
-        <div class="sidebar-section mb-7">
-          <h2 class="text-xs font-semibold text-blue-400 uppercase mb-4 border-b border-slate-700 pb-2">
-            <i class="fas fa-code mr-1.5"></i>技术栈
+        <div class="sidebar-section mb-4">
+          <h2 class="text-[11px] font-semibold text-blue-400 uppercase mb-2.5 border-b border-slate-700 pb-1.5">
+            <i class="fas fa-code mr-1"></i>技术栈
           </h2>
-          <div class="space-y-3">
-            <div>
-              <p class="text-[11px] text-slate-500 uppercase font-medium mb-1.5">Languages & Frameworks</p>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Python</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">PyTorch</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">MONAI</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Ray</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Hydra</span>
-              </div>
-            </div>
-            <div>
-              <p class="text-[11px] text-slate-500 uppercase font-medium mb-1.5">ML / CV</p>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">3D Segmentation</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Model Ensemble</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">TensorRT</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">BEV Perception</span>
-              </div>
-            </div>
-            <div>
-              <p class="text-[11px] text-slate-500 uppercase font-medium mb-1.5">Tools</p>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Git</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Linux</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Docker</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">NumPy</span>
-                <span class="px-2 py-0.5 bg-slate-800 rounded text-[11px] text-slate-300 border border-slate-700">Pandas</span>
-              </div>
-            </div>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Python</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">PyTorch</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">MONAI</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Ray</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Hydra</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">TensorRT</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">3D Seg</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Ensemble</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">BEV</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Git</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Linux</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Docker</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">NumPy</span>
+            <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-300 border border-slate-700">Pandas</span>
           </div>
         </div>
 
         <!-- 链接 -->
-        <div class="sidebar-section mt-auto">
-          <h2 class="text-xs font-semibold text-blue-400 uppercase mb-4 border-b border-slate-700 pb-2">
-            <i class="fas fa-link mr-1.5"></i>链接
+        <div class="sidebar-section">
+          <h2 class="text-[11px] font-semibold text-blue-400 uppercase mb-2.5 border-b border-slate-700 pb-1.5">
+            <i class="fas fa-link mr-1"></i>链接
           </h2>
-          <ul class="space-y-2.5 text-[13px]">
+          <ul class="space-y-1.5 text-[12px]">
             <li>
-              <a href="https://github.com/luoziqianX" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition">
-                <i class="fab fa-github text-blue-400 w-4 text-center"></i>
+              <a href="https://github.com/luoziqianX" target="_blank" class="flex items-center gap-2.5 text-slate-300 hover:text-blue-400 transition">
+                <i class="fab fa-github text-blue-400 w-3.5 text-center text-[11px]"></i>
                 github.com/luoziqianX
               </a>
             </li>
             <li>
-              <a href="https://www.kaggle.com/luoziqian" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition">
-                <i class="fab fa-kaggle text-blue-400 w-4 text-center"></i>
+              <a href="https://www.kaggle.com/luoziqian" target="_blank" class="flex items-center gap-2.5 text-slate-300 hover:text-blue-400 transition">
+                <i class="fab fa-kaggle text-blue-400 w-3.5 text-center text-[11px]"></i>
                 kaggle.com/luoziqian
               </a>
             </li>
@@ -148,38 +144,38 @@
     </aside>
 
     <!-- ========== 右侧主内容 ========== -->
-    <main class="flex-1 bg-white px-9 py-10">
+    <main class="flex-1 bg-white px-7 py-6">
 
       <!-- 姓名 & 简介 -->
-      <header class="mb-8 pb-6 border-b border-slate-200">
-        <h1 class="text-[2.2rem] font-bold text-slate-900 tracking-tight">骆子谦</h1>
-        <p class="text-lg text-blue-600 font-medium mt-1">AI / Machine Learning Engineer</p>
-        <p class="text-[13.5px] text-slate-500 mt-3 leading-relaxed">
-          中国科学技术大学少年班学院人工智能专业本科在读，专注于深度学习、3D 计算机视觉与量化投研。Kaggle CryoET 3D 粒子检测国际竞赛<strong class="text-slate-700">第 2 名 / 931 队</strong>（金牌，$12,000 奖金），拥有量化高频预测建模与自动驾驶感知算法的工业界实习经验。
+      <header class="mb-4 pb-3 border-b border-slate-200">
+        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">骆子谦</h1>
+        <p class="text-base text-blue-600 font-medium mt-0.5">AI / Machine Learning Engineer</p>
+        <p class="text-[12.5px] text-slate-500 mt-2 leading-relaxed">
+          中国科学技术大学少年班学院人工智能专业本科在读，专注于深度学习、3D 计算机视觉与量化投研。Kaggle CryoET 3D 粒子检测国际竞赛<strong class="text-slate-700">第 2 名 / 931 队</strong>（金牌，$12,000 奖金），拥有量化高频预测建模与自动驾驶感知算法的实习经验。
         </p>
       </header>
 
       <!-- 工作经历 -->
-      <section class="mb-8">
-        <h2 class="flex items-center gap-2.5 text-lg font-bold text-slate-900 mb-5">
-          <span class="w-7 h-7 rounded-md bg-blue-600 flex items-center justify-center">
-            <i class="fas fa-briefcase text-white text-xs"></i>
+      <section class="mb-4">
+        <h2 class="flex items-center gap-2 text-base font-bold text-slate-900 mb-2.5">
+          <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center">
+            <i class="fas fa-briefcase text-white text-[10px]"></i>
           </span>
           工作经历
         </h2>
 
         <!-- 蒙玺投资 -->
-        <div class="mb-6 pl-5 border-l-2 border-slate-200 relative">
-          <span class="absolute w-2.5 h-2.5 bg-blue-600 rounded-full -left-[6.5px] top-[7px]"></span>
-          <div class="flex justify-between items-start flex-wrap gap-2 mb-1.5">
+        <div class="mb-3 pl-4 border-l-2 border-slate-200 relative">
+          <span class="absolute w-2 h-2 bg-blue-600 rounded-full -left-[5px] top-[6px]"></span>
+          <div class="flex justify-between items-start flex-wrap gap-1 mb-1">
             <div>
-              <h3 class="text-[15px] font-semibold text-slate-900">蒙玺投资 · 合肥 AI Lab</h3>
-              <p class="text-sm text-blue-600 font-medium">机器学习研究员（实习）</p>
+              <h3 class="text-[13.5px] font-semibold text-slate-900">蒙玺投资 · 合肥 AI Lab</h3>
+              <p class="text-[12.5px] text-blue-600 font-medium">机器学习研究员（实习）</p>
             </div>
-            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full shrink-0">2025.03 – 至今</span>
+            <span class="text-[11px] text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full shrink-0">2025.03 – 至今</span>
           </div>
-          <p class="text-[13px] text-slate-500 mb-2">主导优化 1 分钟级别高频投研预测模型，独立探索多种提升预测精度的研究方向：</p>
-          <ul class="text-[13px] text-slate-600 space-y-1 list-disc list-outside ml-4">
+          <p class="text-[12px] text-slate-500 mb-1">主导优化 1 分钟级别高频投研预测模型，独立探索多种提升预测精度的研究方向：</p>
+          <ul class="text-[12px] text-slate-600 space-y-0.5 list-disc list-outside ml-4">
             <li>基于 <span class="font-medium text-slate-700">Ray + Hydra</span> 搭建分布式训练架构，优化数据统计、读写与训练效率</li>
             <li>设计统计与深度学习结合的因子筛选方法，探索表格数据处理与归一化策略</li>
             <li>设计 <span class="font-medium text-slate-700">IC / RankIC 导向损失函数</span>，针对短时序场景优化网络信息提取结构</li>
@@ -188,17 +184,17 @@
         </div>
 
         <!-- 小米 -->
-        <div class="pl-5 border-l-2 border-slate-200 relative">
-          <span class="absolute w-2.5 h-2.5 bg-blue-600 rounded-full -left-[6.5px] top-[7px]"></span>
-          <div class="flex justify-between items-start flex-wrap gap-2 mb-1.5">
+        <div class="pl-4 border-l-2 border-slate-200 relative">
+          <span class="absolute w-2 h-2 bg-blue-600 rounded-full -left-[5px] top-[6px]"></span>
+          <div class="flex justify-between items-start flex-wrap gap-1 mb-1">
             <div>
-              <h3 class="text-[15px] font-semibold text-slate-900">北京小米移动软件有限公司</h3>
-              <p class="text-sm text-blue-600 font-medium">生成仿真大模型算法工程师（实习）</p>
-              <p class="text-xs text-slate-400">汽车部 › 自动驾驶部 › 感知算法部 › 真值系统</p>
+              <h3 class="text-[13.5px] font-semibold text-slate-900">北京小米移动软件有限公司</h3>
+              <p class="text-[12.5px] text-blue-600 font-medium">生成仿真大模型算法工程师（实习）</p>
+              <p class="text-[11px] text-slate-400">汽车部 › 自动驾驶部 › 感知算法部 › 真值系统</p>
             </div>
-            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full shrink-0">2024.07 – 2024.11</span>
+            <span class="text-[11px] text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full shrink-0">2024.07 – 2024.11</span>
           </div>
-          <ul class="text-[13px] text-slate-600 space-y-1 list-disc list-outside ml-4">
+          <ul class="text-[12px] text-slate-600 space-y-0.5 list-disc list-outside ml-4">
             <li>紧跟自动驾驶世界模型前沿，复现百度未开源的 <span class="font-medium text-slate-700">BEV World Model</span></li>
             <li>在内部数据采集车（SU7）的大规模真实数据集上完成训练、Fine-tune，验证模型在业务场景下的泛化性能</li>
           </ul>
@@ -206,63 +202,63 @@
       </section>
 
       <!-- 竞赛经历 -->
-      <section class="mb-6">
-        <h2 class="flex items-center gap-2.5 text-lg font-bold text-slate-900 mb-5">
-          <span class="w-7 h-7 rounded-md bg-blue-600 flex items-center justify-center">
-            <i class="fas fa-trophy text-white text-xs"></i>
+      <section>
+        <h2 class="flex items-center gap-2 text-base font-bold text-slate-900 mb-2.5">
+          <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center">
+            <i class="fas fa-trophy text-white text-[10px]"></i>
           </span>
           竞赛经历
         </h2>
 
         <!-- Kaggle CryoET -->
-        <div class="mb-5 p-5 bg-gradient-to-br from-blue-50 via-indigo-50/50 to-white rounded-xl border border-blue-200/70">
-          <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+        <div class="mb-3 p-3.5 bg-gradient-to-br from-blue-50 via-indigo-50/50 to-white rounded-lg border border-blue-200/70">
+          <div class="flex justify-between items-start flex-wrap gap-1 mb-1.5">
             <div>
-              <h3 class="text-[15px] font-semibold text-slate-900">
-                <i class="fab fa-kaggle text-blue-500 mr-1"></i>
+              <h3 class="text-[13.5px] font-semibold text-slate-900">
+                <i class="fab fa-kaggle text-blue-500 mr-0.5 text-[12px]"></i>
                 CZII CryoET Object Identification Challenge
               </h3>
-              <div class="flex items-center flex-wrap gap-2 mt-1.5">
-                <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">🥈 2nd / 931 Teams</span>
-                <span class="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">Score: 0.78381</span>
-                <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Kaggle Gold · $12,000</span>
+              <div class="flex items-center flex-wrap gap-1.5 mt-1">
+                <span class="text-[10.5px] font-bold text-amber-700 bg-amber-100 px-1.5 py-px rounded-full">🥈 2nd / 931 Teams</span>
+                <span class="text-[10.5px] font-semibold text-blue-600 bg-blue-100 px-1.5 py-px rounded-full">Score: 0.78381</span>
+                <span class="text-[10.5px] font-semibold text-emerald-700 bg-emerald-100 px-1.5 py-px rounded-full">Kaggle Gold · $12,000</span>
               </div>
             </div>
-            <span class="text-xs text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200 shrink-0">2025.01</span>
+            <span class="text-[11px] text-slate-500 bg-white px-2.5 py-0.5 rounded-full border border-slate-200 shrink-0">2025.01</span>
           </div>
-          <p class="text-[13px] text-slate-500 mb-2">
-            CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞断层扫描图像中定位并标注多种蛋白质复合物。共 6,855 名参赛者，27,971 次提交。
+          <p class="text-[12px] text-slate-500 mb-1.5">
+            CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞图像中定位并标注多种蛋白质复合物。共 6,855 名参赛者，27,971 次提交。
           </p>
-          <ul class="text-[13px] text-slate-600 space-y-1 list-disc list-outside ml-4">
+          <ul class="text-[12px] text-slate-600 space-y-0.5 list-disc list-outside ml-4">
             <li>设计多种轻量级 3D 分割模型集成方案（参数量 873K–14.2M），涵盖 <span class="font-medium text-slate-700">UNet3D / VoxResNet / VoxHRNet / SegResNet / DenseVNet / UNet2E3D</span></li>
-            <li>组合 Tversky / Dice / Cross-Entropy Loss，为不同粒子类型定制 mask 半径，采用 InstanceNorm3d + PReLU 提升训练稳定性</li>
+            <li>组合 Tversky / Dice / CE Loss，为不同粒子类型定制 mask 半径，InstanceNorm3d + PReLU 提升训练稳定性</li>
             <li>CC3D 粒子质心计算 + 体素统计过滤，集成 7–10 个互补模型 + TTA + <span class="font-medium text-slate-700">TensorRT</span> 量化加速</li>
           </ul>
-          <div class="flex flex-wrap gap-4 mt-3 pt-3 border-t border-blue-200/60">
-            <a href="https://www.kaggle.com/competitions/czii-cryo-et-object-identification/writeups/luoziqian-lion-2nd-place-solution" target="_blank" class="text-xs text-blue-600 hover:text-blue-800 hover:underline transition">
-              <i class="fas fa-file-alt mr-1"></i>Solution Write-up
+          <div class="flex flex-wrap gap-3 mt-2 pt-2 border-t border-blue-200/60">
+            <a href="https://www.kaggle.com/competitions/czii-cryo-et-object-identification/writeups/luoziqian-lion-2nd-place-solution" target="_blank" class="text-[11px] text-blue-600 hover:text-blue-800 hover:underline transition">
+              <i class="fas fa-file-alt mr-0.5"></i>Solution Write-up
             </a>
-            <a href="https://github.com/luoziqianX/CZII-CryoET-Object-Identification-2nd-luoziqian" target="_blank" class="text-xs text-blue-600 hover:text-blue-800 hover:underline transition">
-              <i class="fab fa-github mr-1"></i>Training Code
+            <a href="https://github.com/luoziqianX/CZII-CryoET-Object-Identification-2nd-luoziqian" target="_blank" class="text-[11px] text-blue-600 hover:text-blue-800 hover:underline transition">
+              <i class="fab fa-github mr-0.5"></i>Training Code
             </a>
-            <a href="https://cryoetdataportal.czscience.com/depositions/10320" target="_blank" class="text-xs text-blue-600 hover:text-blue-800 hover:underline transition">
-              <i class="fas fa-database mr-1"></i>CZ Data Portal
+            <a href="https://cryoetdataportal.czscience.com/depositions/10320" target="_blank" class="text-[11px] text-blue-600 hover:text-blue-800 hover:underline transition">
+              <i class="fas fa-database mr-0.5"></i>CZ Data Portal
             </a>
           </div>
         </div>
 
         <!-- 物理竞赛 -->
-        <div class="pl-5 border-l-2 border-slate-200 relative">
-          <span class="absolute w-2.5 h-2.5 bg-blue-600 rounded-full -left-[6.5px] top-[7px]"></span>
-          <div class="flex justify-between items-start flex-wrap gap-2">
+        <div class="pl-4 border-l-2 border-slate-200 relative">
+          <span class="absolute w-2 h-2 bg-blue-600 rounded-full -left-[5px] top-[6px]"></span>
+          <div class="flex justify-between items-start flex-wrap gap-1">
             <div>
-              <h3 class="text-[15px] font-semibold text-slate-900">全国中学生物理奥林匹克竞赛（CPhO）</h3>
-              <p class="text-[13px] text-slate-600 mt-1">
-                <span class="font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">全国一等奖</span>
-                <span class="text-slate-400 ml-2">浙江赛区 · 全省第 91 名 · 高二阶段获得</span>
+              <h3 class="text-[13.5px] font-semibold text-slate-900">全国中学生物理奥林匹克竞赛（CPhO）</h3>
+              <p class="text-[12px] text-slate-600 mt-0.5">
+                <span class="font-semibold text-amber-700 bg-amber-50 px-1.5 py-px rounded text-[11px]">全国一等奖</span>
+                <span class="text-slate-400 ml-1.5 text-[11px]">浙江赛区 · 全省第 91 名 · 高二阶段获得</span>
               </p>
             </div>
-            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full shrink-0">2022.09</span>
+            <span class="text-[11px] text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full shrink-0">2022.09</span>
           </div>
         </div>
       </section>
@@ -270,6 +266,6 @@
     </main>
   </div>
 
-  <p class="text-center text-xs text-slate-400 py-4">Last updated: April 2026</p>
+  <p class="text-center text-xs text-slate-400 py-4 no-print">Last updated: April 2026</p>
 </body>
 </html>
