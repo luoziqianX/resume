@@ -36,6 +36,6 @@ HTML + Tailwind CSS 制作的个人简历，支持在线浏览和 PDF 导出。
 
 ## 联系方式
 
-- **Email**: luoziqian@outlook.com
+- **Email**: luoziqian1400961546@outlook.com
 - **GitHub**: [luoziqianX](https://github.com/luoziqianX)
 - **Kaggle**: [luoziqian](https://www.kaggle.com/luoziqian)
