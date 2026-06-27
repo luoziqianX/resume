@@ -200,14 +200,33 @@
                 </div>
                 <span class="text-xs text-slate-600 bg-white px-3 py-1 rounded-full border border-slate-200 shrink-0">2025.01</span>
               </div>
-              <p class="text-sm text-slate-500 mb-2 mt-1">
-                CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞图像中定位并标注多种蛋白质复合物。共 6,855 名参赛者，27,971 次提交。
-              </p>
-              <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-outside ml-5">
-                <li>设计多种轻量级 3D 分割模型集成方案（参数量 873K–14.2M），涵盖 <span class="font-medium text-slate-800">UNet3D / VoxResNet / VoxHRNet / SegResNet / DenseVNet / UNet2E3D</span></li>
-                <li>组合 Tversky / Dice / CE Loss，为不同粒子类型定制 mask 半径，InstanceNorm3d + PReLU 提升训练稳定性</li>
-                <li>CC3D 粒子质心计算 + 体素统计过滤，集成 7–10 个互补模型 + TTA + <span class="font-medium text-slate-800">TensorRT</span> 量化加速</li>
-              </ul>
+              <div class="flex flex-col sm:flex-row gap-5">
+                <figure class="sm:w-44 shrink-0">
+                  <img src="assets/cryoet-chloroplast.jpg" alt="CryoET 三维分割可视化：细胞内多种大分子复合物" data-lightbox
+                    class="w-full h-48 sm:h-auto object-cover rounded-lg ring-1 ring-blue-200/80 shadow-sm cursor-zoom-in hover:opacity-90 transition">
+                  <figcaption class="text-[10px] text-slate-400 mt-1.5 leading-snug">
+                    CryoET 三维分割示意 · © Engel et al. 2015,
+                    <a href="https://commons.wikimedia.org/wiki/File:In_situ_cryo-electron_tomography_of_the_algal_chloroplast_(16191908748).jpg" target="_blank" rel="noopener" class="hover:underline">eLife / CC BY</a>
+                  </figcaption>
+                </figure>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm text-slate-500 mb-2">
+                    CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞图像中定位并标注多种蛋白质复合物。共 6,855 名参赛者，27,971 次提交。
+                  </p>
+                  <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-outside ml-5">
+                    <li>设计多种轻量级 3D 分割模型集成方案（参数量 873K–14.2M），涵盖 <span class="font-medium text-slate-800">UNet3D / VoxResNet / VoxHRNet / SegResNet / DenseVNet / UNet2E3D</span></li>
+                    <li>组合 Tversky / Dice / CE Loss，为不同粒子类型定制 mask 半径，InstanceNorm3d + PReLU 提升训练稳定性</li>
+                    <li>CC3D 粒子质心计算 + 体素统计过滤，集成 7–10 个互补模型 + TTA + <span class="font-medium text-slate-800">TensorRT</span> 量化加速</li>
+                  </ul>
+                </div>
+              </div>
+              <figure class="mt-4">
+                <img src="assets/cryoet-pipeline.png" alt="CryoET 解决方案 Pipeline：训练阶段（弱标签、3D U-Net 分割）与推理阶段（预测、后处理聚类、粒子坐标）" data-lightbox
+                  class="w-full rounded-lg ring-1 ring-slate-200 bg-white p-2 shadow-sm cursor-zoom-in hover:opacity-95 transition">
+                <figcaption class="text-[10px] text-slate-400 mt-1.5 leading-snug">
+                  解决方案 Pipeline：训练（弱标签 → 3D U-Net 分割）→ 推理预测 → 后处理（聚类 / 过滤）→ 粒子坐标定位（作者绘制）
+                </figcaption>
+              </figure>
               <div class="flex flex-wrap gap-4 mt-3 pt-3 border-t border-blue-200/60">
                 <a href="https://www.kaggle.com/competitions/czii-cryo-et-object-identification/writeups/luoziqian-lion-2nd-place-solution" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:text-blue-800 hover:underline transition">
                   <i class="fas fa-file-alt mr-0.5"></i>Solution Write-up
@@ -304,6 +323,14 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- 图片灯箱 -->
+  <div id="lightbox" class="no-print fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out">
+    <figure class="max-w-4xl text-center">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl mx-auto">
+      <figcaption id="lightbox-cap" class="text-xs text-slate-300 mt-3"></figcaption>
+    </figure>
+  </div>
+
   <script>
     // 滚动入场动画
     if ('IntersectionObserver' in window) {
@@ -325,6 +352,25 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // 图片灯箱
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbCap = document.getElementById('lightbox-cap');
+    const openLb = (src, cap) => {
+      lbImg.src = src; lbCap.textContent = cap || '';
+      lb.classList.remove('hidden'); lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeLb = () => {
+      lb.classList.add('hidden'); lb.classList.remove('flex');
+      lbImg.src = ''; document.body.style.overflow = '';
+    };
+    document.querySelectorAll('img[data-lightbox]').forEach((img) => {
+      img.addEventListener('click', () => openLb(img.src, img.alt));
+    });
+    lb.addEventListener('click', closeLb);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 </body>
 </html>
