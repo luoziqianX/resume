@@ -9,8 +9,10 @@ HTML + Tailwind CSS 制作的个人简历，支持在线浏览和 PDF 导出。
 ## 文件结构
 
 ```
-├── index.html       # 简历页面（Tailwind CSS via CDN）
+├── index.html       # 在线简历页面 / 响应式 web 版本（Tailwind CSS via CDN）
+├── print.html       # 打印 / PDF 导出专用版本（双栏单页布局）
 ├── photo.jpg        # 证件照
+├── assets/          # 竞赛相关配图
 ├── 骆子谦_简历.pdf   # PDF 导出版本
 └── README.md
 ```
@@ -31,7 +33,7 @@ HTML + Tailwind CSS 制作的个人简历，支持在线浏览和 PDF 导出。
   --headless=new --disable-gpu --no-pdf-header-footer \
   --virtual-time-budget=5000 \
   --print-to-pdf=骆子谦_简历.pdf \
-  file://$(pwd)/index.html
+  file://$(pwd)/print.html
 ```
 
 ## 联系方式
