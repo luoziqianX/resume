@@ -3,32 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>骆子谦 - 个人简历</title>
+  <title>骆子谦 — AI / Machine Learning Engineer</title>
   <meta name="description" content="骆子谦 · AI / Machine Learning Engineer 个人简历">
   <script>document.documentElement.classList.add('js');</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'Noto Sans SC', 'system-ui', 'sans-serif'] },
-        }
-      }
-    }
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans SC', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: {
+              900: '#111827',
+              700: '#334155',
+              500: '#64748B',
+              400: '#94A3B8',
+            },
+            accent: {
+              DEFAULT: '#2B4C7E',
+              hover: '#1E3A63',
+              subtle: '#F1F5FA',
+              border: '#D5E0EE',
+            },
+            rule: '#E5E7EB',
+          },
+        },
+      },
+    };
   </script>
   <style>
-    html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
-    /* 中英混排：避免短句末尾孤字、长英文串撑破容器 */
-    p, li, figcaption { text-wrap: pretty; overflow-wrap: break-word; }
-    h1, h2, h3 { text-wrap: balance; }
-    .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .js .reveal.show { opacity: 1; transform: none; }
-    .tag { transition: transform .15s ease, background-color .15s ease, color .15s ease; }
-    .tag:hover { transform: translateY(-2px); }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 4.5rem;
+      background-color: #FFFFFF;
+    }
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    p, li, figcaption {
+      text-wrap: pretty;
+      overflow-wrap: break-word;
+    }
+    h1, h2, h3 {
+      text-wrap: balance;
+    }
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .js .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+    .editorial-list > li {
+      position: relative;
+      padding-left: 1.125rem;
+    }
+    .editorial-list > li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 4px;
+      height: 4px;
+      border-radius: 9999px;
+      background-color: #94A3B8;
+    }
+    .figure-zoom {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .figure-zoom:hover {
+      border-color: #94A3B8;
+      box-shadow: 0 6px 20px -8px rgba(15, 23, 42, 0.12);
+    }
     @media print {
       .no-print { display: none !important; }
       body { background: #fff !important; }
@@ -36,302 +99,382 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+<body class="bg-white font-sans text-ink-700 selection:bg-accent-subtle selection:text-accent">
 
-  <!-- ========== 顶部导航 ========== -->
-  <header class="no-print sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-200">
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-      <a href="#top" class="font-bold text-slate-900 tracking-tight text-[15px]">骆子谦<span class="text-blue-600">.</span></a>
-      <div class="flex items-center gap-1 sm:gap-2 text-sm">
-        <a href="#experience" class="hidden sm:inline-block px-3 py-1.5 rounded-md text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">工作经历</a>
-        <a href="#competitions" class="hidden sm:inline-block px-3 py-1.5 rounded-md text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">竞赛经历</a>
-        <a href="#sidebar" class="hidden sm:inline-block px-3 py-1.5 rounded-md text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">教育 · 技能</a>
-        <a href="骆子谦_简历.pdf" download class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 shadow-sm transition">
-          <i class="fas fa-download text-xs"></i>下载 PDF
+  <!-- ========== 顶部极简导航 ========== -->
+  <header class="no-print sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-rule/80">
+    <nav class="max-w-[920px] mx-auto px-5 sm:px-8 h-14 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-baseline gap-2 text-ink-900 hover:text-accent transition-colors">
+        <span class="font-semibold tracking-tight text-[15px]">骆子谦</span>
+        <span class="hidden sm:inline text-xs text-ink-400 font-normal">Resume</span>
+      </a>
+
+      <div class="flex items-center gap-1 sm:gap-5 text-[13px]">
+        <a href="#experience" class="hidden sm:inline-block text-ink-500 hover:text-ink-900 transition-colors">工作经历</a>
+        <a href="#competitions" class="hidden sm:inline-block text-ink-500 hover:text-ink-900 transition-colors">竞赛经历</a>
+        <a href="#education" class="hidden sm:inline-block text-ink-500 hover:text-ink-900 transition-colors">教育背景</a>
+        <a href="#skills" class="hidden sm:inline-block text-ink-500 hover:text-ink-900 transition-colors">技术栈</a>
+        <a href="骆子谦_简历.pdf" download
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-rule bg-white text-ink-900 text-xs font-medium hover:border-ink-900 hover:bg-ink-900 hover:text-white transition-colors">
+          <i class="fas fa-arrow-down text-[10px]"></i>
+          <span>下载 PDF</span>
         </a>
       </div>
     </nav>
   </header>
 
-  <!-- ========== Hero ========== -->
-  <section id="top" class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 text-white">
-    <div class="absolute -top-24 -right-24 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-32 -left-24 w-80 h-80 bg-indigo-600/20 rounded-full blur-3xl"></div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-        <img src="photo.jpg" alt="骆子谦"
-          class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover ring-4 ring-blue-500/50 shadow-2xl shrink-0">
-        <div class="flex-1 text-center md:text-left">
-          <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight leading-none">骆子谦</h1>
-          <p class="text-lg sm:text-xl text-blue-400 font-medium tracking-tight mt-2">AI / Machine Learning Engineer</p>
-          <p class="text-sm sm:text-[15px] text-slate-300 leading-7 mt-4 max-w-2xl">
-            中国科学技术大学少年班学院人工智能专业本科在读，专注于深度学习、3D 计算机视觉与量化投研。Kaggle CryoET 3D 粒子检测国际竞赛<strong class="text-white font-semibold">第 2 名 / 931 队</strong>（金牌，$12,000 奖金），拥有量化高频预测建模与自动驾驶感知算法的实习经验。
-          </p>
+  <!-- ========== 主容器 ========== -->
+  <div id="top" class="max-w-[920px] mx-auto px-5 sm:px-8">
 
-          <!-- 联系方式 -->
-          <div class="flex flex-wrap justify-center md:justify-start gap-2.5 mt-5 text-[13px]">
-            <span class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">
-              <i class="fas fa-phone text-blue-400 text-xs"></i>15258990202
-            </span>
-            <a href="mailto:luoziqian1400961546@outlook.com" class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-3 py-1.5 hover:bg-white/20 transition">
-              <i class="fas fa-envelope text-blue-400 text-xs"></i>luoziqian1400961546@outlook.com
-            </a>
-            <span class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">
-              <i class="fab fa-weixin text-blue-400 text-xs"></i>LuoZiqianX
-            </span>
-            <span class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">
-              <i class="fas fa-map-marker-alt text-blue-400 text-xs"></i>浙江 · 义乌
-            </span>
-          </div>
+    <!-- ========== 极简编辑风 Hero ========== -->
+    <section class="pt-12 pb-10 sm:pt-16 sm:pb-12 border-b border-rule">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden ring-1 ring-ink-900/10 bg-slate-100 shrink-0">
+          <img src="photo.jpg" alt="骆子谦"
+            class="w-full h-full object-cover object-[50%_15%] scale-[1.12]">
+        </div>
 
-          <!-- 链接 + 下载 -->
-          <div class="flex flex-wrap justify-center md:justify-start items-center gap-3 mt-6">
-            <a href="https://github.com/luoziqianX" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 rounded-lg px-4 py-2 text-sm font-medium transition">
-              <i class="fab fa-github"></i>GitHub
-            </a>
-            <a href="https://www.kaggle.com/luoziqian" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 rounded-lg px-4 py-2 text-sm font-medium transition">
-              <i class="fab fa-kaggle"></i>Kaggle
-            </a>
-            <a href="骆子谦_简历.pdf" download
-              class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 rounded-lg px-4 py-2 text-sm font-semibold shadow-lg shadow-blue-900/30 transition">
-              <i class="fas fa-download"></i>下载 PDF 简历
-            </a>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
+            <div>
+              <h1 class="text-[2rem] sm:text-[2.375rem] font-bold text-ink-900 tracking-[-0.03em] leading-[1.12]">骆子谦</h1>
+              <p class="text-[15px] sm:text-base font-medium text-accent tracking-[-0.01em] mt-1.5">AI / Machine Learning Engineer</p>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 shrink-0">
+              <a href="https://github.com/luoziqianX" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-rule text-xs font-medium text-ink-700 hover:border-ink-400 hover:text-ink-900 transition-colors">
+                <i class="fab fa-github text-[13px]"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.kaggle.com/luoziqian" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-rule text-xs font-medium text-ink-700 hover:border-ink-400 hover:text-ink-900 transition-colors">
+                <i class="fab fa-kaggle text-[12px]"></i>
+                <span>Kaggle</span>
+              </a>
+              <a href="骆子谦_简历.pdf" download
+                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-ink-900 text-white text-xs font-medium hover:bg-accent transition-colors">
+                <i class="fas fa-download text-[11px]"></i>
+                <span>下载 PDF</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ========== 主体内容 ========== -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <p class="text-[15px] leading-[1.82] text-ink-700 mt-6 max-w-[70ch]">
+        中国科学技术大学少年班学院人工智能专业本科在读，专注于深度学习、3D 计算机视觉与量化投研。Kaggle CryoET 3D 粒子检测国际竞赛<strong class="font-semibold text-ink-900">第 2 名 / 931 队</strong>（金牌，<span class="tabular-nums whitespace-nowrap">$12,000 奖金</span>），拥有量化高频预测建模与自动驾驶感知算法的实习经验。
+      </p>
 
-      <!-- ===== 主列 ===== -->
-      <div class="lg:col-span-8 space-y-12">
+      <!-- 内联联系方式 -->
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-5 text-[13px] text-ink-500">
+        <span class="inline-flex items-center gap-1.5 tabular-nums">
+          <i class="fas fa-phone text-[11px] text-ink-400"></i>
+          <span>15258990202</span>
+        </span>
+        <a href="mailto:luoziqian1400961546@outlook.com"
+          class="inline-flex items-center gap-1.5 hover:text-accent transition-colors break-all">
+          <i class="fas fa-envelope text-[11px] text-ink-400 shrink-0"></i>
+          <span>luoziqian1400961546@outlook.com</span>
+        </a>
+        <span class="inline-flex items-center gap-1.5">
+          <i class="fab fa-weixin text-[12px] text-ink-400"></i>
+          <span>LuoZiqianX</span>
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <i class="fas fa-map-marker-alt text-[11px] text-ink-400"></i>
+          <span>浙江 · 义乌</span>
+        </span>
+      </div>
 
-        <!-- 工作经历 -->
-        <section id="experience" class="reveal scroll-mt-20">
-          <h2 class="flex items-center gap-2.5 text-xl font-bold tracking-tight text-slate-900 mb-5">
-            <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-sm">
-              <i class="fas fa-briefcase text-white text-sm"></i>
-            </span>
-            工作经历
-          </h2>
+      <!-- 移动端操作按钮 -->
+      <div class="flex sm:hidden flex-wrap items-center gap-2 mt-5">
+        <a href="骆子谦_简历.pdf" download
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-ink-900 text-white text-xs font-medium hover:bg-accent transition-colors">
+          <i class="fas fa-download text-[11px]"></i>
+          <span>下载 PDF 简历</span>
+        </a>
+        <a href="https://github.com/luoziqianX" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-rule text-xs font-medium text-ink-700 hover:border-ink-400 hover:text-ink-900 transition-colors">
+          <i class="fab fa-github text-[13px]"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.kaggle.com/luoziqian" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-rule text-xs font-medium text-ink-700 hover:border-ink-400 hover:text-ink-900 transition-colors">
+          <i class="fab fa-kaggle text-[12px]"></i>
+          <span>Kaggle</span>
+        </a>
+      </div>
+    </section>
 
-          <div class="space-y-5">
+    <!-- ========== 主体分栏（瑞士编辑风：左标签 + 右正文） ========== -->
+    <main>
+
+      <!-- ===== 工作经历 ===== -->
+      <section id="experience" class="reveal py-10 sm:py-12 border-b border-rule scroll-mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-x-10">
+          <div class="md:col-span-3">
+            <h2 class="text-[13px] font-semibold text-ink-900 tracking-[0.02em]">工作经历</h2>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-ink-400 mt-1">Experience</p>
+          </div>
+
+          <div class="md:col-span-9 divide-y divide-rule/80">
 
             <!-- 蒙玺投资 · 上海 -->
-            <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
-              <div class="flex justify-between items-start flex-wrap gap-x-3 gap-y-2 mb-3">
-                <div>
-                  <h3 class="text-base sm:text-[17px] font-semibold tracking-tight leading-snug text-slate-900">蒙玺投资 · 上海</h3>
-                  <p class="text-sm text-blue-600 font-medium mt-0.5">AI 算法研究员（留用实习）</p>
-                  <p class="text-xs text-slate-500 mt-1">Base 由合肥转至上海 · 暑期实习</p>
-                </div>
-                <span class="text-xs font-medium tabular-nums whitespace-nowrap text-slate-600 bg-slate-100 px-3 py-1 rounded-full shrink-0 mt-0.5">2026.06 – 至今</span>
+            <article class="pb-8 first:pt-0">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="text-[16px] font-semibold text-ink-900 tracking-[-0.015em]">蒙玺投资 · 上海</h3>
+                <span class="text-[13px] tabular-nums text-ink-500 shrink-0">2026.06 – 至今</span>
               </div>
-              <ul class="text-sm leading-relaxed text-slate-600 space-y-1.5 list-disc list-outside ml-5 marker:text-slate-400">
-                <li>针对 <span class="font-medium text-slate-800">1min bar 高频预测</span> 与 <span class="font-medium text-slate-800">T0 时序预测</span>，基于 <span class="font-medium text-slate-800">Ray</span> 优化大规模分布式训练效率</li>
-                <li>探索 0 成本端到端深度学习<span class="font-medium text-slate-800">因子筛选</span>方法，提升因子有效性与模型表现</li>
-                <li>在低延迟目标下优化模型容量瓶颈，应用<span class="font-medium text-slate-800">模型蒸馏</span>压缩模型规模并提升推理效率</li>
-                <li>维护并迭代基于 <span class="font-medium text-slate-800">Hydra</span> 的高泛用模型训练框架</li>
+              <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-baseline gap-x-2.5 gap-y-0.5 mt-1">
+                <span class="text-[14px] font-medium text-accent">AI 算法研究员（留用实习）</span>
+                <span class="hidden sm:inline text-xs text-ink-400">·</span>
+                <span class="text-[13px] text-ink-500">Base 由合肥转至上海 · 暑期实习</span>
+              </div>
+              <ul class="editorial-list text-[14px] leading-[1.78] text-ink-700 space-y-2 mt-3.5">
+                <li>针对 <span class="font-medium text-ink-900">1min bar 高频预测</span> 与 <span class="font-medium text-ink-900">T0 时序预测</span>，基于 <span class="font-medium text-ink-900">Ray</span> 优化大规模分布式训练效率</li>
+                <li>探索 0 成本端到端深度学习<span class="font-medium text-ink-900">因子筛选</span>方法，提升因子有效性与模型表现</li>
+                <li>在低延迟目标下优化模型容量瓶颈，应用<span class="font-medium text-ink-900">模型蒸馏</span>压缩模型规模并提升推理效率</li>
+                <li>维护并迭代基于 <span class="font-medium text-ink-900">Hydra</span> 的高泛用模型训练框架</li>
               </ul>
             </article>
 
             <!-- 蒙玺投资 · 合肥 AI Lab -->
-            <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
-              <div class="flex justify-between items-start flex-wrap gap-x-3 gap-y-2 mb-3">
-                <div>
-                  <h3 class="text-base sm:text-[17px] font-semibold tracking-tight leading-snug text-slate-900">蒙玺投资 · 合肥 AI Lab</h3>
-                  <p class="text-sm text-blue-600 font-medium mt-0.5">机器学习研究员（实习）</p>
-                </div>
-                <span class="text-xs font-medium tabular-nums whitespace-nowrap text-slate-600 bg-slate-100 px-3 py-1 rounded-full shrink-0 mt-0.5">2025.03 – 2026.06</span>
+            <article class="py-8">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="text-[16px] font-semibold text-ink-900 tracking-[-0.015em]">蒙玺投资 · 合肥 AI Lab</h3>
+                <span class="text-[13px] tabular-nums text-ink-500 shrink-0">2025.03 – 2026.06</span>
               </div>
-              <p class="text-sm leading-relaxed text-slate-500 mb-2">主导优化 1 分钟级别高频投研预测模型，独立探索多种提升预测精度的研究方向：</p>
-              <ul class="text-sm leading-relaxed text-slate-600 space-y-1.5 list-disc list-outside ml-5 marker:text-slate-400">
-                <li>基于 <span class="font-medium text-slate-800">Ray + Hydra</span> 搭建分布式训练架构，优化数据统计、读写与训练效率</li>
+              <p class="text-[14px] font-medium text-accent mt-1">机器学习研究员（实习）</p>
+              <p class="text-[13.5px] leading-[1.75] text-ink-500 mt-3">
+                主导优化 1 分钟级别高频投研预测模型，独立探索多种提升预测精度的研究方向：
+              </p>
+              <ul class="editorial-list text-[14px] leading-[1.78] text-ink-700 space-y-2 mt-2.5">
+                <li>基于 <span class="font-medium text-ink-900">Ray + Hydra</span> 搭建分布式训练架构，优化数据统计、读写与训练效率</li>
                 <li>设计统计与深度学习结合的因子筛选方法，探索表格数据处理与归一化策略</li>
-                <li>设计 <span class="font-medium text-slate-800">IC / RankIC 导向损失函数</span>，针对短时序场景优化网络信息提取结构</li>
+                <li>设计 <span class="font-medium text-ink-900">IC / RankIC 导向损失函数</span>，针对短时序场景优化网络信息提取结构</li>
                 <li>实现多模型 Ensemble 策略，实现较高预测 IC 和 RankIC</li>
               </ul>
             </article>
 
-            <!-- 小米 -->
-            <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
-              <div class="flex justify-between items-start flex-wrap gap-x-3 gap-y-2 mb-3">
-                <div>
-                  <h3 class="text-base sm:text-[17px] font-semibold tracking-tight leading-snug text-slate-900">北京小米移动软件有限公司</h3>
-                  <p class="text-sm text-blue-600 font-medium mt-0.5">生成仿真大模型算法工程师（实习）</p>
-                  <p class="text-xs text-slate-500 mt-1">汽车部 › 自动驾驶部 › 感知算法部 › 真值系统</p>
-                </div>
-                <span class="text-xs font-medium tabular-nums whitespace-nowrap text-slate-600 bg-slate-100 px-3 py-1 rounded-full shrink-0 mt-0.5">2024.07 – 2024.11</span>
+            <!-- 北京小米移动软件有限公司 -->
+            <article class="pt-8">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="text-[16px] font-semibold text-ink-900 tracking-[-0.015em]">北京小米移动软件有限公司</h3>
+                <span class="text-[13px] tabular-nums text-ink-500 shrink-0">2024.07 – 2024.11</span>
               </div>
-              <ul class="text-sm leading-relaxed text-slate-600 space-y-1.5 list-disc list-outside ml-5 marker:text-slate-400">
-                <li>紧跟自动驾驶世界模型前沿，复现百度未开源的 <span class="font-medium text-slate-800">BEV World Model</span></li>
+              <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-baseline gap-x-2.5 gap-y-0.5 mt-1">
+                <span class="text-[14px] font-medium text-accent">生成仿真大模型算法工程师（实习）</span>
+                <span class="hidden sm:inline text-xs text-ink-400">·</span>
+                <span class="text-[13px] text-ink-500">汽车部 › 自动驾驶部 › 感知算法部 › 真值系统</span>
+              </div>
+              <ul class="editorial-list text-[14px] leading-[1.78] text-ink-700 space-y-2 mt-3.5">
+                <li>紧跟自动驾驶世界模型前沿，复现百度未开源的 <span class="font-medium text-ink-900">BEV World Model</span></li>
                 <li>在内部数据采集车（SU7）的大规模真实数据集上完成训练、Fine-tune，验证模型在业务场景下的泛化性能</li>
               </ul>
             </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- 竞赛经历 -->
-        <section id="competitions" class="reveal scroll-mt-20">
-          <h2 class="flex items-center gap-2.5 text-xl font-bold tracking-tight text-slate-900 mb-5">
-            <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-sm">
-              <i class="fas fa-trophy text-white text-sm"></i>
-            </span>
-            竞赛经历
-          </h2>
+      <!-- ===== 竞赛经历 ===== -->
+      <section id="competitions" class="reveal py-10 sm:py-12 border-b border-rule scroll-mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-x-10">
+          <div class="md:col-span-3">
+            <h2 class="text-[13px] font-semibold text-ink-900 tracking-[0.02em]">竞赛经历</h2>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-ink-400 mt-1">Competitions</p>
+          </div>
 
-          <div class="space-y-5">
+          <div class="md:col-span-9 divide-y divide-rule/80">
 
             <!-- Kaggle CryoET -->
-            <article class="bg-gradient-to-br from-blue-50 via-indigo-50/50 to-white rounded-xl border border-blue-200/70 p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
-              <div class="flex justify-between items-start flex-wrap gap-x-3 gap-y-2 mb-3">
-                <div>
-                  <h3 class="text-base sm:text-[17px] font-semibold tracking-tight leading-snug text-slate-900">
-                    <i class="fab fa-kaggle text-blue-500 mr-1 text-[15px]"></i>
-                    CZII CryoET Object Identification Challenge
-                  </h3>
-                  <div class="flex items-center flex-wrap gap-2 mt-2.5">
-                    <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">🥈 2nd / 931 Teams</span>
-                    <span class="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">Score: 0.78381</span>
-                    <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Kaggle Gold · $12,000</span>
-                  </div>
-                </div>
-                <span class="text-xs font-medium tabular-nums whitespace-nowrap text-slate-600 bg-white px-3 py-1 rounded-full border border-slate-200 shrink-0 mt-0.5">2025.01</span>
+            <article class="pb-8 first:pt-0">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="text-[16px] font-semibold text-ink-900 tracking-[-0.015em]">
+                  CZII CryoET Object Identification Challenge
+                </h3>
+                <span class="text-[13px] tabular-nums text-ink-500 shrink-0">2025.01</span>
               </div>
-              <div class="flex flex-col sm:flex-row gap-5">
-                <figure class="sm:w-44 shrink-0">
-                  <img src="assets/cryoet-chloroplast.jpg" alt="CryoET 三维分割可视化：细胞内多种大分子复合物" data-lightbox
-                    class="w-full h-48 sm:h-auto object-cover rounded-lg ring-1 ring-blue-200/80 shadow-sm cursor-zoom-in hover:opacity-90 transition">
-                  <figcaption class="text-[11px] text-slate-500 mt-2 leading-snug">
-                    CryoET 三维分割示意 · © Engel et al. 2015,
-                    <a href="https://commons.wikimedia.org/wiki/File:In_situ_cryo-electron_tomography_of_the_algal_chloroplast_(16191908748).jpg" target="_blank" rel="noopener" class="hover:underline">eLife / CC BY</a>
-                  </figcaption>
-                </figure>
+
+              <!-- 指标条（克制编辑风，无花哨色块） -->
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2.5 py-2 px-3 rounded-md bg-accent-subtle/70 border border-accent-border/80 text-[12.5px] tabular-nums">
+                <span class="font-semibold text-ink-900">2nd / 931 Teams</span>
+                <span class="text-ink-400" aria-hidden="true">/</span>
+                <span class="font-medium text-accent">Score 0.78381</span>
+                <span class="hidden sm:inline text-ink-400" aria-hidden="true">/</span>
+                <span class="text-ink-700 w-full sm:w-auto">Kaggle Gold · $12,000</span>
+              </div>
+
+              <!-- 说明 + 3D 分割配图 -->
+              <div class="flex flex-col sm:flex-row gap-6 mt-5">
                 <div class="flex-1 min-w-0">
-                  <p class="text-sm leading-relaxed text-slate-500 mb-2">
-                    CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞图像中定位并标注多种蛋白质复合物。共 6,855 名参赛者，27,971 次提交。
+                  <p class="text-[13.5px] leading-[1.75] text-ink-500">
+                    CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞图像中定位并标注多种蛋白质复合物。共 <span class="tabular-nums whitespace-nowrap">6,855 名参赛者，</span><span class="tabular-nums whitespace-nowrap">27,971 次提交。</span>
                   </p>
-                  <ul class="text-sm leading-relaxed text-slate-600 space-y-1.5 list-disc list-outside ml-5 marker:text-slate-400">
-                    <li>设计多种轻量级 3D 分割模型集成方案（参数量 873K–14.2M），涵盖 <span class="font-medium text-slate-800">UNet3D / VoxResNet / VoxHRNet / SegResNet / DenseVNet / UNet2E3D</span></li>
+                  <ul class="editorial-list text-[14px] leading-[1.78] text-ink-700 space-y-2 mt-3">
+                    <li>设计多种轻量级 3D 分割模型集成方案（参数量 <span class="tabular-nums">873K–14.2M</span>），涵盖 <span class="font-medium text-ink-900">UNet3D / VoxResNet / VoxHRNet / SegResNet / DenseVNet / UNet2E3D</span></li>
                     <li>组合 Tversky / Dice / CE Loss，为不同粒子类型定制 mask 半径，InstanceNorm3d + PReLU 提升训练稳定性</li>
-                    <li>CC3D 粒子质心计算 + 体素统计过滤，集成 7–10 个互补模型 + TTA + <span class="font-medium text-slate-800">TensorRT</span> 量化加速</li>
+                    <li>CC3D 粒子质心计算 + 体素统计过滤，集成 7–10 个互补模型 + TTA + <span class="font-medium text-ink-900">TensorRT</span> 量化加速</li>
                   </ul>
                 </div>
+
+                <figure class="sm:w-44 shrink-0">
+                  <button type="button" data-lightbox-trigger
+                    data-src="assets/cryoet-chloroplast.jpg"
+                    data-alt="CryoET 三维分割可视化：细胞内多种大分子复合物"
+                    data-cap="CryoET 三维分割示意 · © Engel et al. 2015, eLife / CC BY"
+                    class="group relative block w-full text-left rounded-lg overflow-hidden border border-rule bg-slate-50 figure-zoom cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                    <img src="assets/cryoet-chloroplast.jpg"
+                      alt="CryoET 三维分割可视化：细胞内多种大分子复合物"
+                      class="w-full h-52 sm:h-56 object-cover block">
+                    <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-white/90 text-[10px] font-medium text-ink-700 border border-rule/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                      放大
+                    </span>
+                  </button>
+                  <figcaption class="text-[11.5px] text-ink-500 mt-2 leading-snug">
+                    CryoET 三维分割示意 · © Engel et al. 2015,
+                    <a href="https://commons.wikimedia.org/wiki/File:In_situ_cryo-electron_tomography_of_the_algal_chloroplast_(16191908748).jpg"
+                      target="_blank" rel="noopener" class="text-accent hover:underline">eLife / CC BY</a>
+                  </figcaption>
+                </figure>
               </div>
-              <figure class="mt-5">
-                <img src="assets/cryoet-pipeline.png" alt="CryoET 解决方案 Pipeline：训练阶段（弱标签、3D U-Net 分割）与推理阶段（预测、后处理聚类、粒子坐标）" data-lightbox
-                  class="w-full rounded-lg ring-1 ring-blue-200/80 bg-white p-2 shadow-sm cursor-zoom-in hover:opacity-90 transition">
-                <figcaption class="text-[11px] text-slate-500 mt-2 leading-snug">
+
+              <!-- 解决方案 Pipeline 图 -->
+              <figure class="mt-6">
+                <button type="button" data-lightbox-trigger
+                  data-src="assets/cryoet-pipeline.png"
+                  data-alt="CryoET 解决方案 Pipeline：训练阶段（弱标签、3D U-Net 分割）与推理阶段（预测、后处理聚类、粒子坐标）"
+                  data-cap="解决方案 Pipeline：训练（弱标签 → 3D U-Net 分割）→ 推理预测 → 后处理（聚类 / 过滤）→ 粒子坐标定位（作者绘制）"
+                  class="group relative block w-full text-left rounded-lg overflow-hidden border border-rule bg-white p-2.5 sm:p-3 figure-zoom cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                  <img src="assets/cryoet-pipeline.png"
+                    alt="CryoET 解决方案 Pipeline：训练阶段（弱标签、3D U-Net 分割）与推理阶段（预测、后处理聚类、粒子坐标）"
+                    class="w-full h-auto block rounded-sm">
+                  <span class="absolute bottom-3.5 right-3.5 px-2 py-0.5 rounded bg-white/95 text-[10.5px] font-medium text-ink-700 border border-rule opacity-0 group-hover:opacity-100 transition-opacity">
+                    点击查看大图
+                  </span>
+                </button>
+                <figcaption class="text-[11.5px] text-ink-500 mt-2 leading-snug">
                   解决方案 Pipeline：训练（弱标签 → 3D U-Net 分割）→ 推理预测 → 后处理（聚类 / 过滤）→ 粒子坐标定位（作者绘制）
                 </figcaption>
               </figure>
-              <div class="flex flex-wrap gap-x-5 gap-y-2 mt-4 pt-3 border-t border-blue-200/60">
-                <a href="https://www.kaggle.com/competitions/czii-cryo-et-object-identification/writeups/luoziqian-lion-2nd-place-solution" target="_blank" rel="noopener" class="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline transition">
-                  <i class="fas fa-file-alt mr-0.5"></i>Solution Write-up
+
+              <!-- 外链 -->
+              <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-5 pt-4 border-t border-rule/70 text-[13px]">
+                <a href="https://www.kaggle.com/competitions/czii-cryo-et-object-identification/writeups/luoziqian-lion-2nd-place-solution"
+                  target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover hover:underline underline-offset-4 transition-colors">
+                  <span>Solution Write-up</span>
+                  <span aria-hidden="true" class="text-[11px]">↗</span>
                 </a>
-                <a href="https://github.com/luoziqianX/CZII-CryoET-Object-Identification-2nd-luoziqian" target="_blank" rel="noopener" class="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline transition">
-                  <i class="fab fa-github mr-0.5"></i>Training Code
+                <a href="https://github.com/luoziqianX/CZII-CryoET-Object-Identification-2nd-luoziqian"
+                  target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover hover:underline underline-offset-4 transition-colors">
+                  <span>Training Code</span>
+                  <span aria-hidden="true" class="text-[11px]">↗</span>
                 </a>
-                <a href="https://cryoetdataportal.czscience.com/depositions/10320" target="_blank" rel="noopener" class="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline transition">
-                  <i class="fas fa-database mr-0.5"></i>CZ Data Portal
+                <a href="https://cryoetdataportal.czscience.com/depositions/10320"
+                  target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover hover:underline underline-offset-4 transition-colors">
+                  <span>CZ Data Portal</span>
+                  <span aria-hidden="true" class="text-[11px]">↗</span>
                 </a>
               </div>
             </article>
 
             <!-- 物理竞赛 -->
-            <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
-              <div class="flex justify-between items-start flex-wrap gap-x-3 gap-y-2">
-                <div>
-                  <h3 class="text-base sm:text-[17px] font-semibold tracking-tight leading-snug text-slate-900">全国中学生物理奥林匹克竞赛（CPhO）</h3>
-                  <p class="flex items-center flex-wrap gap-x-2 gap-y-1 text-sm text-slate-600 mt-2">
-                    <span class="font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded text-xs">全国一等奖</span>
-                    <span class="text-slate-500 text-xs">浙江赛区 · 全省第 91 名 · 高二阶段获得</span>
-                  </p>
-                </div>
-                <span class="text-xs font-medium tabular-nums whitespace-nowrap text-slate-600 bg-slate-100 px-3 py-1 rounded-full shrink-0 mt-0.5">2022.09</span>
+            <article class="pt-8">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="text-[16px] font-semibold text-ink-900 tracking-[-0.015em]">
+                  全国中学生物理奥林匹克竞赛（CPhO）
+                </h3>
+                <span class="text-[13px] tabular-nums text-ink-500 shrink-0">2022.09</span>
               </div>
+              <p class="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 mt-1.5 text-[14px]">
+                <span class="font-medium text-accent">全国一等奖</span>
+                <span class="text-xs text-ink-400">·</span>
+                <span class="text-[13.5px] text-ink-500 tabular-nums">浙江赛区 · 全省第 91 名 · 高二阶段获得</span>
+              </p>
             </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
+      <!-- ===== 教育背景 ===== -->
+      <section id="education" class="reveal py-10 sm:py-12 border-b border-rule scroll-mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10">
+          <div class="md:col-span-3">
+            <h2 class="text-[13px] font-semibold text-ink-900 tracking-[0.02em]">教育背景</h2>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-ink-400 mt-1">Education</p>
+          </div>
+
+          <div class="md:col-span-9">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="text-[16px] font-semibold text-ink-900 tracking-[-0.015em]">中国科学技术大学</h3>
+              <span class="text-[13px] tabular-nums text-ink-500 shrink-0">2023.07 – 2027.07</span>
+            </div>
+            <p class="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 mt-1.5 text-[14px]">
+              <span class="font-medium text-accent">少年班学院 · 人工智能</span>
+              <span class="text-xs text-ink-400">·</span>
+              <span class="text-[13.5px] text-ink-500">本科在读</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 技术栈 ===== -->
+      <section id="skills" class="reveal py-10 sm:py-12 scroll-mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10">
+          <div class="md:col-span-3">
+            <h2 class="text-[13px] font-semibold text-ink-900 tracking-[0.02em]">技术栈</h2>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-ink-400 mt-1">Skills</p>
+          </div>
+
+          <div class="md:col-span-9">
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Python</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">PyTorch</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">MONAI</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Ray</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Hydra</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">TensorRT</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">3D Seg</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Ensemble</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">BEV</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Git</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Linux</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Docker</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">NumPy</span>
+              <span class="px-2.5 py-1 text-[13px] text-ink-700 bg-white border border-rule rounded-md hover:border-accent-border hover:bg-accent-subtle/60 hover:text-accent transition-colors">Pandas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== 极简页脚 ========== -->
+    <footer class="no-print border-t border-rule py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-400">
+      <p>© 2026 骆子谦 · Last updated: November 2026</p>
+      <div class="flex items-center gap-4">
+        <a href="骆子谦_简历.pdf" download class="text-ink-500 hover:text-accent transition-colors">下载 PDF 版</a>
+        <a href="#top" class="text-ink-500 hover:text-ink-900 transition-colors">返回顶部 ↑</a>
       </div>
+    </footer>
 
-      <!-- ===== 侧列 ===== -->
-      <aside id="sidebar" class="lg:col-span-4 space-y-5 lg:sticky lg:top-20 lg:self-start scroll-mt-20">
-
-        <!-- 教育背景 -->
-        <div class="reveal bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm">
-          <h2 class="flex items-center gap-2.5 text-lg font-bold tracking-tight text-slate-900 mb-4">
-            <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-sm">
-              <i class="fas fa-graduation-cap text-white text-sm"></i>
-            </span>
-            教育背景
-          </h2>
-          <div>
-            <h3 class="text-base sm:text-[17px] font-semibold tracking-tight leading-snug text-slate-900">中国科学技术大学</h3>
-            <p class="text-xs text-slate-500 tabular-nums mt-1">2023.07 – 2027.07</p>
-            <p class="text-sm text-blue-600 font-medium mt-1.5">少年班学院 · 人工智能</p>
-            <p class="text-xs text-slate-500 mt-0.5">本科在读</p>
-          </div>
-        </div>
-
-        <!-- 技术栈 -->
-        <div class="reveal bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm">
-          <h2 class="flex items-center gap-2.5 text-lg font-bold tracking-tight text-slate-900 mb-4">
-            <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-sm">
-              <i class="fas fa-code text-white text-sm"></i>
-            </span>
-            技术栈
-          </h2>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PyTorch</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">MONAI</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Ray</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Hydra</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">TensorRT</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">3D Seg</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Ensemble</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">BEV</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Git</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Linux</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Docker</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">NumPy</span>
-            <span class="tag px-2.5 py-1 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Pandas</span>
-          </div>
-        </div>
-
-      </aside>
-
-    </div>
-  </main>
-
-  <!-- ========== 页脚 ========== -->
-  <footer class="no-print border-t border-slate-200 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-center text-sm text-slate-500">
-      <p>© 2026 骆子谦 · <a href="骆子谦_简历.pdf" download class="text-blue-600 hover:underline">下载 PDF 版</a></p>
-      <p class="mt-1 text-xs text-slate-400">Last updated: October 2026</p>
-    </div>
-  </footer>
-
-  <!-- 返回顶部 -->
-  <button id="toTop" aria-label="返回顶部"
-    class="no-print fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 opacity-0 pointer-events-none transition">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  </div>
 
   <!-- 图片灯箱 -->
-  <div id="lightbox" class="no-print fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out">
-    <figure class="max-w-4xl text-center">
-      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl mx-auto">
-      <figcaption id="lightbox-cap" class="text-xs text-slate-300 mt-3"></figcaption>
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="图片预览"
+    class="no-print fixed inset-0 z-[60] hidden items-center justify-center bg-ink-900/85 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out">
+    <button id="lightbox-close" type="button" aria-label="关闭预览"
+      class="fixed top-4 right-4 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+      <i class="fas fa-times text-sm"></i>
+    </button>
+    <figure class="max-w-5xl w-full text-center" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt=""
+        class="max-w-full max-h-[82vh] rounded-lg bg-white shadow-2xl mx-auto object-contain">
+      <figcaption id="lightbox-cap" class="text-xs text-slate-300 mt-3 leading-relaxed"></figcaption>
     </figure>
   </div>
 
@@ -339,42 +482,54 @@
     // 滚动入场动画
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            io.unobserve(entry.target);
+          }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     } else {
       document.querySelectorAll('.reveal').forEach((el) => el.classList.add('show'));
     }
 
-    // 返回顶部
-    const toTop = document.getElementById('toTop');
-    const onScroll = () => {
-      if (window.scrollY > 400) { toTop.classList.remove('opacity-0', 'pointer-events-none'); }
-      else { toTop.classList.add('opacity-0', 'pointer-events-none'); }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
     // 图片灯箱
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
     const lbCap = document.getElementById('lightbox-cap');
-    const openLb = (src, cap) => {
-      lbImg.src = src; lbCap.textContent = cap || '';
-      lb.classList.remove('hidden'); lb.classList.add('flex');
+    const lbClose = document.getElementById('lightbox-close');
+
+    const openLb = (src, alt, cap) => {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lbCap.textContent = cap || alt || '';
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
       document.body.style.overflow = 'hidden';
     };
+
     const closeLb = () => {
-      lb.classList.add('hidden'); lb.classList.remove('flex');
-      lbImg.src = ''; document.body.style.overflow = '';
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      lbImg.src = '';
+      document.body.style.overflow = '';
     };
-    document.querySelectorAll('img[data-lightbox]').forEach((img) => {
-      img.addEventListener('click', () => openLb(img.src, img.alt));
+
+    document.querySelectorAll('[data-lightbox-trigger]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        openLb(btn.dataset.src, btn.dataset.alt, btn.dataset.cap);
+      });
     });
+
     lb.addEventListener('click', closeLb);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+    lbClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLb();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lb.classList.contains('hidden')) closeLb();
+    });
   </script>
 </body>
 </html>
