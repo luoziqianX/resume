@@ -133,25 +133,29 @@
             <a href="https://www.kaggle.com/luoziqian" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:underline">
               <i class="fab fa-kaggle text-[10px] text-ink-400"></i>kaggle.com/luoziqian
             </a>
+            <a href="https://luoziqianx.github.io/resume/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:underline">
+              <i class="fas fa-globe text-[9.5px] text-ink-400"></i>luoziqianx.github.io/resume
+            </a>
           </div>
         </div>
 
-        <div class="w-[74px] h-[74px] rounded-lg overflow-hidden ring-1 ring-ink-900/10 bg-slate-100 shrink-0">
+        <div class="relative w-[74px] h-[74px] rounded-lg overflow-hidden ring-1 ring-ink-900/12 bg-slate-100 shrink-0">
           <img src="photo.jpg" alt="骆子谦"
-            class="w-full h-full object-cover object-[50%_14%] scale-[1.15]">
+            class="w-full h-full object-cover object-[50%_14%] scale-[1.15] saturate-[0.9] contrast-[1.02]">
+          <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-ink-900/10"></span>
         </div>
       </div>
 
-      <p class="text-[11.25px] leading-[1.6] text-ink-700 mt-2.5">
+      <p class="text-[11.25px] leading-[1.62] text-ink-700 mt-2.5">
         中国科学技术大学少年班学院人工智能专业本科在读，专注于深度学习、3D 计算机视觉与量化投研。Kaggle CryoET 3D 粒子检测国际竞赛<strong class="font-semibold text-ink-900">第 2 名 / 931 队</strong>（金牌，<span class="tabular-nums whitespace-nowrap">$12,000 奖金</span>），拥有量化高频预测建模与自动驾驶感知算法的实习经验。
       </p>
     </header>
 
     <!-- ========== 主体区块 ========== -->
-    <main class="flex-1 flex flex-col justify-between pt-3.5">
+    <main class="flex-1 flex flex-col pt-4 space-y-[18px]">
 
       <!-- 教育背景 -->
-      <section class="mb-3.5">
+      <section>
         <div class="flex items-baseline justify-between border-b border-rule pb-1 mb-2">
           <h2 class="text-[12.5px] font-bold text-ink-900 tracking-[0.04em]">教育背景</h2>
           <span class="text-[9.5px] uppercase tracking-[0.14em] text-ink-400 font-medium">Education</span>
@@ -167,49 +171,63 @@
       </section>
 
       <!-- 工作经历 -->
-      <section class="mb-3.5">
+      <section>
         <div class="flex items-baseline justify-between border-b border-rule pb-1 mb-2.5">
           <h2 class="text-[12.5px] font-bold text-ink-900 tracking-[0.04em]">工作经历</h2>
           <span class="text-[9.5px] uppercase tracking-[0.14em] text-ink-400 font-medium">Experience</span>
         </div>
 
         <div class="space-y-3">
-          <!-- 蒙玺投资 · 上海 -->
+          <!-- 蒙玺投资（合并两段连续经历） -->
           <article>
             <div class="flex items-baseline justify-between gap-4">
-              <div class="flex items-baseline flex-wrap gap-x-2">
-                <h3 class="text-[13px] font-semibold text-ink-900">蒙玺投资 · 上海</h3>
-                <span class="text-[12px] font-medium text-accent">AI 算法研究员（留用实习）</span>
-                <span class="text-[11px] text-ink-500">· Base 由合肥转至上海 · 暑期实习</span>
-              </div>
-              <span class="text-[11.5px] tabular-nums text-ink-500 shrink-0">2026.06 – 至今</span>
+              <h3 class="text-[13px] font-semibold text-ink-900">蒙玺投资</h3>
+              <span class="text-[11.5px] tabular-nums text-ink-500 shrink-0">2025.03 – 至今</span>
             </div>
-            <ul class="print-list text-[11.5px] leading-[1.56] text-ink-700 space-y-0.5 mt-1">
-              <li>针对 <span class="font-medium text-ink-900">1min bar 高频预测</span> 与 <span class="font-medium text-ink-900">T0 时序预测</span>，基于 <span class="font-medium text-ink-900">Ray</span> 优化大规模分布式训练效率</li>
-              <li>探索 0 成本端到端深度学习<span class="font-medium text-ink-900">因子筛选</span>方法，提升因子有效性与模型表现</li>
-              <li>在低延迟目标下优化模型容量瓶颈，应用<span class="font-medium text-ink-900">模型蒸馏</span>压缩模型规模并提升推理效率</li>
-              <li>维护并迭代基于 <span class="font-medium text-ink-900">Hydra</span> 的高泛用模型训练框架</li>
-            </ul>
-          </article>
 
-          <!-- 蒙玺投资 · 合肥 AI Lab -->
-          <article class="pt-2.5 border-t border-rule/70">
-            <div class="flex items-baseline justify-between gap-4">
-              <div class="flex items-baseline flex-wrap gap-x-2">
-                <h3 class="text-[13px] font-semibold text-ink-900">蒙玺投资 · 合肥 AI Lab</h3>
-                <span class="text-[12px] font-medium text-accent">机器学习研究员（实习）</span>
+            <div class="relative mt-1.5 ml-[4px] pl-3.5 border-l border-rule space-y-2.5">
+              <!-- 蒙玺投资 · 上海 -->
+              <div class="relative">
+                <span aria-hidden="true" class="absolute -left-[17.5px] top-[5.5px] w-[6px] h-[6px] rounded-full bg-accent ring-[2.5px] ring-white"></span>
+                <div class="flex items-baseline justify-between gap-4">
+                  <div class="flex items-baseline flex-wrap gap-x-1.5">
+                    <span class="text-[12px] font-semibold text-accent">AI 算法研究员（留用实习）</span>
+                    <span class="text-[11px] text-ink-400">·</span>
+                    <span class="text-[11.5px] font-medium text-ink-900">上海</span>
+                    <span class="text-[10.5px] text-ink-500">（Base 由合肥转至上海 · 暑期实习）</span>
+                  </div>
+                  <span class="text-[11px] tabular-nums text-ink-500 shrink-0">2026.06 – 至今</span>
+                </div>
+                <ul class="print-list text-[11.5px] leading-[1.58] text-ink-700 space-y-0.5 mt-1">
+                  <li>针对 <span class="font-medium text-ink-900">1min bar 高频预测</span> 与 <span class="font-medium text-ink-900">T0 时序预测</span>，基于 <span class="font-medium text-ink-900">Ray</span> 优化大规模分布式训练效率</li>
+                  <li>探索 0 成本端到端深度学习<span class="font-medium text-ink-900">因子筛选</span>方法，提升因子有效性与模型表现</li>
+                  <li>在低延迟目标下优化模型容量瓶颈，应用<span class="font-medium text-ink-900">模型蒸馏</span>压缩模型规模并提升推理效率</li>
+                  <li>维护并迭代基于 <span class="font-medium text-ink-900">Hydra</span> 的高泛用模型训练框架</li>
+                </ul>
               </div>
-              <span class="text-[11.5px] tabular-nums text-ink-500 shrink-0">2025.03 – 2026.06</span>
+
+              <!-- 蒙玺投资 · 合肥 AI Lab -->
+              <div class="relative">
+                <span aria-hidden="true" class="absolute -left-[17.5px] top-[5.5px] w-[6px] h-[6px] rounded-full bg-slate-300 ring-[2.5px] ring-white"></span>
+                <div class="flex items-baseline justify-between gap-4">
+                  <div class="flex items-baseline flex-wrap gap-x-1.5">
+                    <span class="text-[12px] font-semibold text-accent">机器学习研究员（实习）</span>
+                    <span class="text-[11px] text-ink-400">·</span>
+                    <span class="text-[11.5px] font-medium text-ink-900">合肥 AI Lab</span>
+                  </div>
+                  <span class="text-[11px] tabular-nums text-ink-500 shrink-0">2025.03 – 2026.06</span>
+                </div>
+                <p class="text-[11.25px] leading-[1.54] text-ink-500 mt-0.5">
+                  主导优化 1 分钟级别高频投研预测模型，独立探索多种提升预测精度的研究方向：
+                </p>
+                <ul class="print-list text-[11.5px] leading-[1.58] text-ink-700 space-y-0.5 mt-0.5">
+                  <li>基于 <span class="font-medium text-ink-900">Ray + Hydra</span> 搭建分布式训练架构，优化数据统计、读写与训练效率</li>
+                  <li>设计统计与深度学习结合的因子筛选方法，探索表格数据处理与归一化策略</li>
+                  <li>设计 <span class="font-medium text-ink-900">IC / RankIC 导向损失函数</span>，针对短时序场景优化网络信息提取结构</li>
+                  <li>实现多模型 Ensemble 策略，实现较高预测 IC 和 RankIC</li>
+                </ul>
+              </div>
             </div>
-            <p class="text-[11.5px] leading-[1.54] text-ink-500 mt-1">
-              主导优化 1 分钟级别高频投研预测模型，独立探索多种提升预测精度的研究方向：
-            </p>
-            <ul class="print-list text-[11.5px] leading-[1.56] text-ink-700 space-y-0.5 mt-0.5">
-              <li>基于 <span class="font-medium text-ink-900">Ray + Hydra</span> 搭建分布式训练架构，优化数据统计、读写与训练效率</li>
-              <li>设计统计与深度学习结合的因子筛选方法，探索表格数据处理与归一化策略</li>
-              <li>设计 <span class="font-medium text-ink-900">IC / RankIC 导向损失函数</span>，针对短时序场景优化网络信息提取结构</li>
-              <li>实现多模型 Ensemble 策略，实现较高预测 IC 和 RankIC</li>
-            </ul>
           </article>
 
           <!-- 北京小米移动软件有限公司 -->
@@ -222,7 +240,7 @@
               <span class="text-[11.5px] tabular-nums text-ink-500 shrink-0">2024.07 – 2024.11</span>
             </div>
             <p class="text-[10.5px] text-ink-500 mt-0.5">汽车部 › 自动驾驶部 › 感知算法部 › 真值系统</p>
-            <ul class="print-list text-[11.5px] leading-[1.56] text-ink-700 space-y-0.5 mt-1">
+            <ul class="print-list text-[11.5px] leading-[1.58] text-ink-700 space-y-0.5 mt-1">
               <li>紧跟自动驾驶世界模型前沿，复现百度未开源的 <span class="font-medium text-ink-900">BEV World Model</span></li>
               <li>在内部数据采集车（SU7）的大规模真实数据集上完成训练、Fine-tune，验证模型在业务场景下的泛化性能</li>
             </ul>
@@ -231,7 +249,7 @@
       </section>
 
       <!-- 竞赛经历 -->
-      <section class="mb-3.5">
+      <section>
         <div class="flex items-baseline justify-between border-b border-rule pb-1 mb-2.5">
           <h2 class="text-[12.5px] font-bold text-ink-900 tracking-[0.04em]">竞赛经历</h2>
           <span class="text-[9.5px] uppercase tracking-[0.14em] text-ink-400 font-medium">Competitions</span>
@@ -245,18 +263,18 @@
               <span class="text-[11.5px] tabular-nums text-ink-500 shrink-0">2025.01</span>
             </div>
 
-            <div class="inline-flex flex-wrap items-center gap-x-2.5 gap-y-0.5 mt-1 px-2 py-0.5 rounded-[3px] bg-accent-subtle border border-accent-border/80 text-[10.5px] tabular-nums">
+            <div class="inline-flex flex-wrap items-center gap-x-2.5 gap-y-0.5 mt-1.5 px-2.5 py-0.5 rounded-[4px] bg-accent-subtle border border-accent-border/80 text-[10.5px] tabular-nums">
               <span class="font-semibold text-ink-900">2nd / 931 Teams</span>
               <span class="text-ink-400">·</span>
-              <span class="font-medium text-accent">Score: 0.78381</span>
+              <span class="font-medium text-accent">Score 0.78381</span>
               <span class="text-ink-400">·</span>
               <span class="text-ink-700">Kaggle Gold · $12,000</span>
             </div>
 
-            <p class="text-[10.6px] leading-[1.54] text-ink-500 mt-1.5">
+            <p class="text-[10.5px] leading-[1.56] text-ink-500 mt-1.5">
               CryoET（冷冻电镜断层扫描）3D 粒子检测国际竞赛，在 3D 细胞图像中定位并标注多种蛋白质复合物。共 <span class="tabular-nums">6,855</span> 名参赛者，<span class="tabular-nums">27,971</span> 次提交。
             </p>
-            <ul class="print-list text-[11.5px] leading-[1.56] text-ink-700 space-y-0.5 mt-0.5">
+            <ul class="print-list text-[11.5px] leading-[1.58] text-ink-700 space-y-0.5 mt-0.5">
               <li>设计多种轻量级 3D 分割模型集成方案（参数量 <span class="tabular-nums">873K–14.2M</span>），涵盖 <span class="font-medium text-ink-900">UNet3D / VoxResNet / VoxHRNet / SegResNet / DenseVNet / UNet2E3D</span></li>
               <li>组合 Tversky / Dice / CE Loss，为不同粒子类型定制 mask 半径，InstanceNorm3d + PReLU 提升训练稳定性</li>
               <li>CC3D 粒子质心计算 + 体素统计过滤，集成 7–10 个互补模型 + TTA + <span class="font-medium text-ink-900">TensorRT</span> 量化加速</li>
@@ -283,27 +301,42 @@
         </div>
       </section>
 
-      <!-- 技术栈 -->
+      <!-- 技术栈（语义分组） -->
       <section>
-        <div class="flex items-baseline justify-between border-b border-rule pb-1 mb-2">
+        <div class="flex items-baseline justify-between border-b border-rule pb-1 mb-2.5">
           <h2 class="text-[12.5px] font-bold text-ink-900 tracking-[0.04em]">技术栈</h2>
           <span class="text-[9.5px] uppercase tracking-[0.14em] text-ink-400 font-medium">Skills</span>
         </div>
-        <div class="flex flex-wrap gap-[4px]">
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Python</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">PyTorch</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">MONAI</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Ray</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Hydra</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">TensorRT</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">3D Seg</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Ensemble</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">BEV</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Git</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Linux</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Docker</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">NumPy</span>
-          <span class="px-[5px] py-[2px] text-[10px] text-ink-700 border border-rule rounded-[3px] bg-white">Pandas</span>
+        <div class="space-y-1.5 text-[11px]">
+          <div class="grid grid-cols-[108px_1fr] items-baseline gap-3">
+            <span class="text-ink-500 font-medium">框架与分布式</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-900 font-medium border border-accent-border bg-accent-subtle/60 rounded-[3px]">PyTorch</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">MONAI</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-900 font-medium border border-accent-border bg-accent-subtle/60 rounded-[3px]">Ray</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">Hydra</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">TensorRT</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-[108px_1fr] items-baseline gap-3">
+            <span class="text-ink-500 font-medium">算法与研究方向</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">3D Seg</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">Ensemble</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">BEV</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-[108px_1fr] items-baseline gap-3">
+            <span class="text-ink-500 font-medium">语言与工程工具</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-900 font-medium border border-accent-border bg-accent-subtle/60 rounded-[3px]">Python</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">NumPy</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">Pandas</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">Linux</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">Docker</span>
+              <span class="px-1.5 py-[1px] text-[10.5px] text-ink-700 border border-rule rounded-[3px] bg-white">Git</span>
+            </div>
+          </div>
         </div>
       </section>
 
